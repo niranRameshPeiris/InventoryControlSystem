@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sales" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3d12d8cb-ae60-4843-8fee-7729da3484f3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="sales" uuid="a6008b73-4338-4e1b-a5fc-de38a12abca6">
+		<queryString language="SQL">
+			<![CDATA[select sales.idsale,date,customer.idcustomer,customer.name,total,count(sale_products.idproduct) from sales
+join sale_products on sale_products.idsale=sales.idsale
+join customer on sales.idcustomer=customer.idcustomer
+group by idsale]]>
+		</queryString>
+		<field name="idsale" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="date" class="java.sql.Timestamp">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="idcustomer" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="name" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="count(sale_products.idproduct)" class="java.lang.Long"/>
+		<field name="total" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="purchase" uuid="ab29f33b-458c-4b34-b74e-ec0e0572957e">
+		<queryString language="SQL">
+			<![CDATA[select purchase.idpurchase,date,supplier.idsupplier,supplier.name,total,count(purchase_products.idproduct) from purchase
+join purchase_products on purchase_products.idpurchase=purchase.idpurchase
+join supplier on purchase.idsupplier=supplier.idsupplier
+group by idpurchase]]>
+		</queryString>
+		<field name="idpurchase" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="date" class="java.sql.Timestamp">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="idsupplier" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="name" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="count(purchase_products.idproduct)" class="java.lang.Long"/>
+		<field name="total" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="income" uuid="de65fd0c-9a12-4047-82dd-00b067cbd0dd">
+		<queryString language="SQL">
+			<![CDATA[select sales.idsale,date,customer.idcustomer,customer.name,total,paymentType,paymentDate from sales
+join customer on sales.idcustomer=customer.idcustomer
+group by idsale]]>
+		</queryString>
+		<field name="idsale" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="date" class="java.sql.Timestamp">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="idcustomer" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="name" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="total" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="paymentType" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="paymentDate" class="java.sql.Timestamp">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="expenditure" uuid="27cc27d3-86f8-4867-9c42-29b649837829">
+		<queryString language="SQL">
+			<![CDATA[select purchase.idpurchase,date,supplier.idsupplier,supplier.name,total,paymentType,paidDate from purchase
+join supplier on purchase.idsupplier=supplier.idsupplier
+group by idpurchase]]>
+		</queryString>
+		<field name="idpurchase" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="date" class="java.sql.Timestamp">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="idsupplier" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="name" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="total" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="paymentType" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="paidDate" class="java.sql.Timestamp">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="employee" uuid="4e7e411e-39ec-4e18-8d57-8fd25d5ffb04">
+		<queryString language="SQL">
+			<![CDATA[select * from employee]]>
+		</queryString>
+		<field name="idemployee" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="name" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="address" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="city" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="telephoneNo" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="user" uuid="c3d1bf85-8858-40b0-b3c4-8aa2f77af167">
+		<queryString language="SQL">
+			<![CDATA[select * from user;]]>
+		</queryString>
+		<field name="iduser" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="userName" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="name" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="password" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="level" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[select * from user;]]>
+	</queryString>
+	<field name="iduser" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="userName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="password" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="level" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="extra" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="123" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="121" width="555" height="1" uuid="58a923e6-0b27-4c7a-807a-8a6c308012d7"/>
+			</line>
+			<staticText>
+				<reportElement x="131" y="23" width="425" height="63" uuid="24b073f4-0578-447d-bca7-23610a62d7a1"/>
+				<textElement>
+					<font size="48" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User  Report]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="130" height="119" uuid="4678a39e-857b-4cc7-b490-a6f5651c615e"/>
+				<imageExpression><![CDATA["C:\\Users\\Ramesh\\Desktop\\hello.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="1" y="3" width="555" height="20" forecolor="#000000" backcolor="#99B4D1" uuid="99ec698c-b75b-4a2d-85a8-2685506fb513"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of  "+ $V{PAGE_NUMBER}+"   "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="3" width="130" height="20" uuid="f0452b0d-82af-42e7-b922-f7b8d1d2a30c"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["   "+new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="234" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table 6" style="table 6" x="1" y="21" width="554" height="191" uuid="2a05db26-61f8-47d9-90d2-74f760c70513"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="user" uuid="ae3f9023-9b9f-47a2-855e-fd8a44f9ea65">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="c0abd25e-20ff-4c2c-b7c3-95a8b54528e1">
+						<jr:columnHeader style="table 6_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="374955b6-fca1-4141-83c2-f133cf178f26"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[User ID]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 6_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 6_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="90" height="20" uuid="29d33a7c-2ec5-4681-9368-988401bbec91"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{iduser}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="129" uuid="74d293f9-8a39-417f-bd60-d662ae3cb77b">
+						<jr:columnHeader style="table 6_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="129" height="30" uuid="4aaf345f-3f89-4b15-9147-ba501d7ae936"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[User Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 6_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 6_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="129" height="20" uuid="2d90ebd0-16cd-4e4a-bca6-ec9229bed8e0"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{userName}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="130" uuid="08242696-9d5c-43e1-bbe0-f7c4b787696d">
+						<jr:columnHeader style="table 6_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="130" height="30" uuid="d0aab29f-e105-4613-9a30-f5af0b4c0d0c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 6_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 6_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="130" height="20" uuid="b9bf9120-22a3-4348-a337-b37529f71006"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="114" uuid="a01f21b8-5982-436d-9df3-835eb97621f5">
+						<jr:columnHeader style="table 6_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="114" height="30" uuid="0a49d53a-dfef-4411-b610-099f310c1ef6"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Password]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 6_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 6_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="114" height="20" uuid="9f98624c-6662-4567-8224-df5784352422"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isStrikeThrough="true" isPdfEmbedded="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{password}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="40ff5bda-6c62-4518-80b4-f6df2c78961f">
+						<jr:columnHeader style="table 6_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="e4bf1413-f2d4-4f68-aa18-0df66f67b961"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Access Level]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 6_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 6_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="90" height="20" uuid="46a72436-0bc8-4583-acca-6651d0cca5a4"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{level}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

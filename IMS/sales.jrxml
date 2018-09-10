@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sales" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3d12d8cb-ae60-4843-8fee-7729da3484f3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="sales" uuid="a6008b73-4338-4e1b-a5fc-de38a12abca6">
+		<queryString language="SQL">
+			<![CDATA[select sales.idsale,date,customer.idcustomer,customer.name,total,count(sale_products.idproduct) from sales
+join sale_products on sale_products.idsale=sales.idsale
+join customer on sales.idcustomer=customer.idcustomer
+group by idsale]]>
+		</queryString>
+		<field name="idsale" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="date" class="java.sql.Timestamp">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="idcustomer" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="name" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="count(sale_products.idproduct)" class="java.lang.Long"/>
+		<field name="total" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[select sales.idsale,date,customer.idcustomer,customer.name,total,count(sale_products.idproduct) from sales
+join sale_products on sale_products.idsale=sales.idsale
+join customer on sales.idcustomer=customer.idcustomer
+group by idsale]]>
+	</queryString>
+	<field name="idsale" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idcustomer" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="count(sale_products.idproduct)" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="123" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="121" width="555" height="1" uuid="58a923e6-0b27-4c7a-807a-8a6c308012d7"/>
+			</line>
+			<staticText>
+				<reportElement x="219" y="17" width="162" height="63" uuid="24b073f4-0578-447d-bca7-23610a62d7a1"/>
+				<textElement>
+					<font size="48" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sales]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="130" height="119" uuid="4678a39e-857b-4cc7-b490-a6f5651c615e"/>
+				<imageExpression><![CDATA["C:\\Users\\Ramesh\\Desktop\\hello.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="1" y="3" width="555" height="20" forecolor="#000000" backcolor="#99B4D1" uuid="99ec698c-b75b-4a2d-85a8-2685506fb513"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of  "+ $V{PAGE_NUMBER}+"   "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="3" width="130" height="20" uuid="f0452b0d-82af-42e7-b922-f7b8d1d2a30c"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["   "+new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="236" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table 1" style="table 1" x="1" y="23" width="555" height="188" uuid="1d080dc3-a4c9-429b-acd9-a342a396ca7c"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="sales" uuid="162e91f2-e229-4e0e-bb6d-9c9225d63958">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="f6627a3c-83e0-4f5f-a3b4-9071c3965e51">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="4aa61c91-4ec5-4870-a10a-cfc0c04e7d6f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Sales ID]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="90" height="20" uuid="83fe47bb-7e74-43dc-b544-bfc565db7804"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{idsale}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="45ccaf23-d670-49b4-8936-62079a64e1f9">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="233db2cc-c6ac-4ed0-905c-bc1ea691a0ee"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Date]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="90" height="20" uuid="bdf05558-e85c-4148-9e76-107adc35bda5"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="dbbe1960-ab39-4d18-89ae-635a534c9c2f">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="ebc3d67e-d91b-4f25-bdc4-bbaa5ff94db3"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[customer ID]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="90" height="20" uuid="0fb54821-01d1-4eb0-a779-32d124eb3418"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{idcustomer}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="99" uuid="13f85423-cdcb-4dea-837e-6b5b279d7fa6">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="99" height="30" uuid="8a097818-0c5e-475a-8753-49eb91facf0c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Customer Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="99" height="20" uuid="b9e29d53-b2bf-4c29-97f5-e53f6e35c741"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="21af8918-560a-4a15-9e45-eecacc8a36a4">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="6a8f2ded-5a58-4b8f-bee0-5e30d13d170e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[No Of Products]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="90" height="20" uuid="4a852366-b218-4a04-84a1-a3e89b98f647"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{count(sale_products.idproduct)}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="95" uuid="d6ae8683-bb24-4f78-b9c4-b8574f4bd13d">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="95" height="30" uuid="3f4eced7-a7ef-43fb-b544-f10cc0150aea"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="95" height="20" uuid="c921fd14-b006-4939-92f2-e2afd7bd3be0"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

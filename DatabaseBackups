@@ -1,0 +1,300 @@
+-- MySQL dump 10.13  Distrib 5.5.9, for Win32 (x86)
+--
+-- Host: localhost    Database: inventory
+-- ------------------------------------------------------
+-- Server version	5.5.15
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `inventory`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `inventory` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `inventory`;
+
+--
+-- Table structure for table `customer`
+--
+
+DROP TABLE IF EXISTS `customer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `customer` (
+  `idcustomer` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `country` varchar(255) NOT NULL,
+  `postcode` varchar(10) NOT NULL,
+  `telephone` varchar(10) NOT NULL,
+  `fax` varchar(255) DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
+  `contactPerson` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idcustomer`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `employee`
+--
+
+DROP TABLE IF EXISTS `employee`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `employee` (
+  `idemployee` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(45) NOT NULL,
+  `city` varchar(45) NOT NULL,
+  `telephoneNo` varchar(45) NOT NULL,
+  PRIMARY KEY (`idemployee`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `employee`
+--
+
+LOCK TABLES `employee` WRITE;
+/*!40000 ALTER TABLE `employee` DISABLE KEYS */;
+/*!40000 ALTER TABLE `employee` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `product`
+--
+
+DROP TABLE IF EXISTS `product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `product` (
+  `idproduct` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `specification` varchar(45) DEFAULT NULL,
+  `pricePurchase` double NOT NULL,
+  `priceSale` double NOT NULL,
+  `stock` int(11) NOT NULL,
+  `uom` varchar(10) DEFAULT NULL,
+  `rackNo` int(11) NOT NULL,
+  PRIMARY KEY (`idproduct`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `product`
+--
+
+LOCK TABLES `product` WRITE;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `purchase`
+--
+
+DROP TABLE IF EXISTS `purchase`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `purchase` (
+  `idpurchase` int(11) NOT NULL AUTO_INCREMENT,
+  `idsupplier` int(11) NOT NULL,
+  `total` double NOT NULL,
+  `paymentType` varchar(45) DEFAULT NULL,
+  `paid/not` varchar(10) DEFAULT 'notpaid',
+  `date` datetime NOT NULL,
+  `paidDate` datetime DEFAULT NULL,
+  `empId` int(11) NOT NULL,
+  PRIMARY KEY (`idpurchase`),
+  KEY `buy` (`idsupplier`),
+  KEY `emp` (`empId`),
+  CONSTRAINT `buy` FOREIGN KEY (`idsupplier`) REFERENCES `supplier` (`idsupplier`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `purchase`
+--
+
+LOCK TABLES `purchase` WRITE;
+/*!40000 ALTER TABLE `purchase` DISABLE KEYS */;
+/*!40000 ALTER TABLE `purchase` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `purchase_products`
+--
+
+DROP TABLE IF EXISTS `purchase_products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `purchase_products` (
+  `idpurchase` int(11) NOT NULL,
+  `idproduct` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  PRIMARY KEY (`idpurchase`,`idproduct`),
+  KEY `pp` (`idproduct`),
+  KEY `pp2` (`idpurchase`),
+  CONSTRAINT `pp` FOREIGN KEY (`idproduct`) REFERENCES `product` (`idproduct`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `pp2` FOREIGN KEY (`idpurchase`) REFERENCES `purchase` (`idpurchase`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `purchase_products`
+--
+
+LOCK TABLES `purchase_products` WRITE;
+/*!40000 ALTER TABLE `purchase_products` DISABLE KEYS */;
+/*!40000 ALTER TABLE `purchase_products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sale_products`
+--
+
+DROP TABLE IF EXISTS `sale_products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sale_products` (
+  `idsale` int(11) NOT NULL,
+  `idproduct` int(11) NOT NULL,
+  `quantity` varchar(45) NOT NULL,
+  PRIMARY KEY (`idsale`,`idproduct`),
+  KEY `sp` (`idproduct`),
+  KEY `sp2` (`idsale`),
+  CONSTRAINT `sp` FOREIGN KEY (`idproduct`) REFERENCES `product` (`idproduct`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `sp2` FOREIGN KEY (`idsale`) REFERENCES `sales` (`idsale`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sale_products`
+--
+
+LOCK TABLES `sale_products` WRITE;
+/*!40000 ALTER TABLE `sale_products` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sale_products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sales`
+--
+
+DROP TABLE IF EXISTS `sales`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sales` (
+  `idsale` int(11) NOT NULL AUTO_INCREMENT,
+  `date` datetime NOT NULL,
+  `idcustomer` int(11) NOT NULL,
+  `total` double NOT NULL,
+  `paymentType` varchar(45) DEFAULT NULL,
+  `paymentDate` datetime DEFAULT NULL,
+  `paid/not` varchar(10) DEFAULT 'notpaid',
+  `empId` int(11) NOT NULL,
+  PRIMARY KEY (`idsale`),
+  KEY `order` (`idcustomer`),
+  KEY `emplo` (`empId`),
+  CONSTRAINT `order` FOREIGN KEY (`idcustomer`) REFERENCES `customer` (`idcustomer`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sales`
+--
+
+LOCK TABLES `sales` WRITE;
+/*!40000 ALTER TABLE `sales` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sales` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `supplier`
+--
+
+DROP TABLE IF EXISTS `supplier`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `supplier` (
+  `idsupplier` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `Address` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `country` varchar(255) NOT NULL,
+  `postcode` varchar(10) NOT NULL,
+  `telephone` varchar(10) NOT NULL,
+  `fax` varchar(45) DEFAULT NULL,
+  `contactperson` varchar(45) DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
+  PRIMARY KEY (`idsupplier`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `supplier`
+--
+
+LOCK TABLES `supplier` WRITE;
+/*!40000 ALTER TABLE `supplier` DISABLE KEYS */;
+/*!40000 ALTER TABLE `supplier` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
+  `iduser` int(11) NOT NULL AUTO_INCREMENT,
+  `userName` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `password` varchar(8) NOT NULL,
+  `level` varchar(5) NOT NULL,
+  `extra` varchar(36) DEFAULT NULL,
+  PRIMARY KEY (`iduser`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'head','Owner','1234','0',NULL);
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-05-11 20:45:42

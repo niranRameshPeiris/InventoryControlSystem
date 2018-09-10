@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sales" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3d12d8cb-ae60-4843-8fee-7729da3484f3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="sales" uuid="a6008b73-4338-4e1b-a5fc-de38a12abca6">
+		<queryString language="SQL">
+			<![CDATA[select sales.idsale,date,customer.idcustomer,customer.name,total,count(sale_products.idproduct) from sales
+join sale_products on sale_products.idsale=sales.idsale
+join customer on sales.idcustomer=customer.idcustomer
+group by idsale]]>
+		</queryString>
+		<field name="idsale" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="date" class="java.sql.Timestamp">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="idcustomer" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="name" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="count(sale_products.idproduct)" class="java.lang.Long"/>
+		<field name="total" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="purchase" uuid="ab29f33b-458c-4b34-b74e-ec0e0572957e">
+		<queryString language="SQL">
+			<![CDATA[select purchase.idpurchase,date,supplier.idsupplier,supplier.name,total,count(purchase_products.idproduct) from purchase
+join purchase_products on purchase_products.idpurchase=purchase.idpurchase
+join supplier on purchase.idsupplier=supplier.idsupplier
+group by idpurchase]]>
+		</queryString>
+		<field name="idpurchase" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="date" class="java.sql.Timestamp">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="idsupplier" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="name" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="count(purchase_products.idproduct)" class="java.lang.Long"/>
+		<field name="total" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="income" uuid="de65fd0c-9a12-4047-82dd-00b067cbd0dd">
+		<queryString language="SQL">
+			<![CDATA[select sales.idsale,date,customer.idcustomer,customer.name,total,paymentType,paymentDate from sales
+join customer on sales.idcustomer=customer.idcustomer
+group by idsale]]>
+		</queryString>
+		<field name="idsale" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="date" class="java.sql.Timestamp">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="idcustomer" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="name" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="total" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="paymentType" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="paymentDate" class="java.sql.Timestamp">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="expenditure" uuid="27cc27d3-86f8-4867-9c42-29b649837829">
+		<queryString language="SQL">
+			<![CDATA[select purchase.idpurchase,date,supplier.idsupplier,supplier.name,total,paymentType,paidDate from purchase
+join supplier on purchase.idsupplier=supplier.idsupplier
+group by idpurchase]]>
+		</queryString>
+		<field name="idpurchase" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="date" class="java.sql.Timestamp">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="idsupplier" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="name" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="total" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="paymentType" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="paidDate" class="java.sql.Timestamp">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="employee" uuid="4e7e411e-39ec-4e18-8d57-8fd25d5ffb04">
+		<queryString language="SQL">
+			<![CDATA[select * from employee]]>
+		</queryString>
+		<field name="idemployee" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="name" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="address" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="city" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="telephoneNo" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[select * from employee;]]>
+	</queryString>
+	<field name="idemployee" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="city" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telephoneNo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="123" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="121" width="555" height="1" uuid="58a923e6-0b27-4c7a-807a-8a6c308012d7"/>
+			</line>
+			<staticText>
+				<reportElement x="131" y="23" width="425" height="63" uuid="24b073f4-0578-447d-bca7-23610a62d7a1"/>
+				<textElement>
+					<font size="48" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Employee Report]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="130" height="119" uuid="4678a39e-857b-4cc7-b490-a6f5651c615e"/>
+				<imageExpression><![CDATA["C:\\Users\\Ramesh\\Desktop\\hello.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="1" y="3" width="555" height="20" forecolor="#000000" backcolor="#99B4D1" uuid="99ec698c-b75b-4a2d-85a8-2685506fb513"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of  "+ $V{PAGE_NUMBER}+"   "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="3" width="130" height="20" uuid="f0452b0d-82af-42e7-b922-f7b8d1d2a30c"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["   "+new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="234" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table 5" style="table 5" x="0" y="19" width="556" height="196" uuid="4a6a9660-6894-42f6-8c4c-101307d89cd6"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="employee" uuid="ee7e3f9a-5852-418a-a330-de76d41b319b">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="111" uuid="1ecffa5d-8964-4832-8f24-8a075788e6d7">
+						<jr:columnHeader style="table 5_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="111" height="30" uuid="422f1074-8b98-49f0-828a-7f371fe1e48d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Employee ID]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 5_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 5_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="111" height="20" uuid="de5f67be-4e5e-4365-a0e0-abb2246894cf"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{idemployee}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="110" uuid="1f8332d7-c2a3-448e-8111-5693bf7a5bea">
+						<jr:columnHeader style="table 5_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="110" height="30" uuid="3ab22df4-4db6-419a-8992-12942fe095a8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Employee Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 5_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 5_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="110" height="20" uuid="3ad179dc-0894-45b3-81d1-562320084fe3"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="113" uuid="317f6679-8dd4-47f2-960d-f384b1c2b857">
+						<jr:columnHeader style="table 5_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="113" height="30" uuid="23913533-7d2b-4d64-bcfd-b251a7389f70"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Address]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 5_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 5_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="113" height="20" uuid="4f3fd85f-3c4a-48b5-9b4d-5d1907fa840c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="112" uuid="b2e37fe6-2891-41bd-be30-9c250c550dee">
+						<jr:columnHeader style="table 5_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="112" height="30" uuid="0fe856fa-d17e-40c1-8f1c-8b9f8f3646b5"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[City]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 5_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 5_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="112" height="20" uuid="e7a31ed5-53fb-46f0-8147-f9d8156204a2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{city}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="109" uuid="e8afda60-29b4-4bbd-91bf-368f6e1cd5a2">
+						<jr:columnHeader style="table 5_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="109" height="30" uuid="faa77574-1c1e-4f21-9d7c-2567871836f4"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Telephone No]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 5_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 5_TD" height="20" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="109" height="20" uuid="1b4be5da-dc57-4040-b3f3-92d31fc2e419"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{telephoneNo}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>
