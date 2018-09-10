@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="757.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.bodyController">
+   <children>
+      <MenuBar prefHeight="28.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Menu">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#logout" text="Logout" />
+                  <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="User">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#userProfile" text="View Profile" />
+                  <MenuItem mnemonicParsing="false" onAction="#resetName" text="Reset User Name" />
+                  <MenuItem mnemonicParsing="false" onAction="#resetPassword" text="Reset Password" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+            <Menu fx:id="admin" mnemonicParsing="false" text="Admin ">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#adminPannel" text="Admin Pannel" />
+                  <MenuItem fx:id="user" mnemonicParsing="false" onAction="#userPannel" text="User Pannel" />
+                  <MenuItem fx:id="emp" mnemonicParsing="false" onAction="#addEmployee" text="Add Employee" />
+                  <MenuItem fx:id="empr" mnemonicParsing="false" onAction="#empReport" text="Employee Report" />
+                  <MenuItem mnemonicParsing="false" onAction="#userRep" text="User Report" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <AnchorPane fx:id="coreload" layoutY="28.0" prefHeight="484.0" prefWidth="757.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0" />
+   </children>
+</AnchorPane>

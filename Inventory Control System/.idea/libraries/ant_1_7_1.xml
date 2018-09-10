@@ -1,0 +1,77 @@
+<component name="libraryTable">
+  <library name="ant-1.7.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ireport/ant-1.7.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/antlr-2.7.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/barbecue-1.5-beta1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/barcode4j-2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/batik-anim.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/batik-awt-util.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/batik-bridge.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/batik-css.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/batik-dom.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/batik-ext.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/batik-gvt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/batik-parser.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/batik-script.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/batik-svg-dom.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/batik-svggen.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/batik-util.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/batik-xml.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/bcel-5.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/bsh-2.0b4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/castor-core-1.3.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/castor-xml-1.3.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/commons-beanutils-1.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/commons-codec-1.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/commons-collections-3.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/commons-digester-2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/commons-javaflow-20060411.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/core-2.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/dom4j-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/ecj-4.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/groovy-all-2.4.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/hibernate-core-3.3.2.GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/hsqldb-1.8.0-10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/httpclient-4.3.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/httpcore-4.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/itext-2.1.7.js4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/jackson-annotations-2.1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/jackson-core-2.1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/jackson-databind-2.1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/jasperreports-6.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/jasperreports-javaflow-6.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/jaxen-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/jcommon-1.0.23.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/jfreechart-1.0.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/jpa.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/jxl-2.6.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/log4j-1.2.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/lucene-analyzers-common-4.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/lucene-core-4.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/lucene-queryparser-4.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/mondrian-3.1.1.12687.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/olap4j-0.9.7.309-JS-3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/png-encoder-1.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/poi-3.10.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/poi-ooxml-3.10.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/poi-ooxml-schemas-3.10.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/rhino-1.7.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/saaj-api-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/serializer.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/servlet-api-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/spring-beans-2.5.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/spring-core-2.5.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/velocity-1.7-dep.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/xalan-2.7.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/xercesImpl-2.10.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/xml-apis.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/xml-apis-ext.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/xmlbeans-2.5.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ireport/xmpcore-5.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
